@@ -1,0 +1,80 @@
+{
+  "author": "chrvadala",
+  "name": "react-svg-pan-zoom",
+  "version": "3.11.0",
+  "description": "A React component that adds pan and zoom features to SVG",
+  "main": "./build-commonjs/index.js",
+  "module": "./build-es/index.js",
+  "unpkg": "./build-umd/react-svg-pan-zoom.min.js",
+  "jsnext:main": "./build-es/index.js",
+  "scripts": {
+    "start": "npm run website:start",
+    "build": "npm run clean && npm run build:commonjs && npm run build:es && npm run build:umd && npm run build:umd_min",
+    "test": "npm run test:coverage",
+    "website:start": "start-storybook -p 9001",
+    "website:build": "build-storybook -o build-website",
+    "build:commonjs": "KEEP_MODULES=false babel --out-dir build-commonjs src",
+    "build:es": "KEEP_MODULES=true babel --out-dir build-es src",
+    "build:umd_min": "webpack --env minimize",
+    "build:umd": "webpack",
+    "clean": "del build-* coverage",
+    "test:jest": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "files": [
+    "*.md",
+    "build-*",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrvadala/react-svg-pan-zoom.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrvadala/react-svg-pan-zoom/issues"
+  },
+  "homepage": "https://chrvadala.github.io/react-svg-pan-zoom/",
+  "keywords": [
+    "react",
+    "react-component",
+    "svg",
+    "pan",
+    "zoom",
+    "react",
+    "ui",
+    "user",
+    "interface",
+    "component",
+    "web-components"
+  ],
+  "dependencies": {
+    "prop-types": "^15.8.0",
+    "transformation-matrix": "^2.11.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.7",
+    "@react-hook/window-size": "^3.0.7",
+    "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-essentials": "^6.4.9",
+    "@storybook/addon-links": "^6.4.9",
+    "@storybook/builder-webpack5": "^6.4.9",
+    "@storybook/manager-webpack5": "^6.4.9",
+    "@storybook/node-logger": "^6.4.9",
+    "@storybook/preset-create-react-app": "^4.0.0",
+    "@storybook/react": "^6.4.9",
+    "del-cli": "^4.0.1",
+    "jest": "^27.4.7",
+    "jest-matcher-deep-close-to": "^3.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.0",
+    "web-vitals": "^2.1.2",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "funding": "https://www.paypal.me/chrvadala/25"
+}
